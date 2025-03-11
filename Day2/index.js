@@ -27,9 +27,18 @@ const fs = require("fs");
 
 // 
 
-fs.rm("myFile.txt",(error)=>{
-    if(error) console.log(error);
+// fs.rm("myFile.txt",(error)=>{
+//     if(error) console.log(error);
     
-    console.log("dir deleted sucessfully");
+//     console.log("dir deleted sucessfully");
     
-})
+// })
+
+// fs.appendFile('message.txt', '\ndata2 to append', (err) => {
+//     if (err) throw err;
+//     console.log('The "data to append" was appended to file!');
+//   }); 
+
+// const append = fs.appendFileSync("./message.txt", "\nsecound time", {encoding: "utf-8"})
+// console.log(append);
+

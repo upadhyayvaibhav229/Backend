@@ -7,9 +7,10 @@ Your notes are mostly accurate but need some refinements. Here are the correctio
 - **Node.js** is a JavaScript runtime environment that allows JavaScript to run outside the browser. It is built on the **V8 JavaScript engine** and provides an event-driven, non-blocking I/O model.
 
 ### JavaScript Characteristics:
-- **JavaScript is both synchronous and asynchronous.**  
-- **JavaScript is single-threaded.**  
-- **JavaScript is a dynamically typed, concurrent programming language.**  
+
+- **JavaScript is both synchronous and asynchronous.**
+- **JavaScript is single-threaded.**
+- **JavaScript is a dynamically typed, concurrent programming language.**
 
 ---
 
@@ -18,22 +19,26 @@ Your notes are mostly accurate but need some refinements. Here are the correctio
 Synchronous programming executes tasks sequentially—one task must finish before moving to the next.
 
 ### Example:
+
 ```js
 console.log(1);
 
 setTimeout(() => {
-    console.log(2);
+  console.log(2);
 }, 0);
 
 console.log(3);
 ```
+
 **Output:**
+
 ```
 1
 3
 2
 ```
-*Even though `setTimeout` has `0` delay, it is asynchronous and executes later.*
+
+_Even though `setTimeout` has `0` delay, it is asynchronous and executes later._
 
 ---
 
@@ -42,22 +47,26 @@ console.log(3);
 Asynchronous programming allows tasks to run independently without blocking the execution of other tasks.
 
 ### Example:
+
 ```js
 console.log(1);
 
 setTimeout(() => {
-    console.log(2);
+  console.log(2);
 }, 0);
 
 console.log(3);
 ```
+
 **Output:**
+
 ```
 1
 3
 2
 ```
-*The execution of `setTimeout` is deferred, making the code non-blocking.*
+
+_The execution of `setTimeout` is deferred, making the code non-blocking._
 
 ---
 
@@ -66,16 +75,18 @@ console.log(3);
 **Concurrent programming** allows multiple tasks to make progress **at the same time** but not necessarily simultaneously. JavaScript uses **event-driven concurrency**.
 
 ### Example:
+
 ```js
 console.log(1);
 
 setTimeout(() => {
-    console.log(2);
+  console.log(2);
 }, 0);
 
 console.log(3);
 ```
-*JavaScript’s event loop enables concurrency by handling I/O operations asynchronously while executing other tasks.*
+
+_JavaScript’s event loop enables concurrency by handling I/O operations asynchronously while executing other tasks._
 
 ---
 
@@ -93,27 +104,32 @@ console.log(3);
 The **event loop** is the mechanism that allows JavaScript to handle asynchronous operations non-blockingly.
 
 ### How it Works:
+
 1. Executes **synchronous** code first (call stack).
 2. Handles **asynchronous tasks** (callbacks, promises, timers).
 3. Moves completed async tasks from the **callback queue** to the **call stack** when it's empty.
 
 ### Example:
+
 ```js
 console.log("A");
 
 setTimeout(() => {
-    console.log("B");
+  console.log("B");
 }, 0);
 
 console.log("C");
 ```
+
 **Output:**
+
 ```
 A
 C
 B
 ```
-*Even though `setTimeout` has `0` delay, it runs after synchronous code due to the event loop.*
+
+_Even though `setTimeout` has `0` delay, it runs after synchronous code due to the event loop._
 
 ---
 
@@ -122,19 +138,22 @@ B
 A **callback function** is a function passed as an argument to another function and executed later.
 
 ### Example:
+
 ```js
 function greet(name, callback) {
-    console.log("Hello, " + name);
-    callback();
+  console.log("Hello, " + name);
+  callback();
 }
 
 function sayGoodbye() {
-    console.log("Goodbye!");
+  console.log("Goodbye!");
 }
 
 greet("Vaibhav", sayGoodbye);
 ```
+
 **Output:**
+
 ```
 Hello, Vaibhav
 Goodbye!
@@ -147,14 +166,27 @@ Goodbye!
 In **dynamic typing**, the type of a variable can change at runtime.
 
 ### Example:
+
 ```js
-let a = 10;  // a is a number
+let a = 10; // a is a number
 a = "hello"; // a is now a string
 
 console.log(a); // Output: "hello"
 ```
-*JavaScript determines variable types dynamically at runtime.*
+
+_JavaScript determines variable types dynamically at runtime._
 
 ---
 
-Your notes are now more refined and accurate! Let me know if you want further clarifications. 🚀
+## File System
+
+| Operation        | Asynchronous Method | Synchronous Method    | Use Case                         |
+| ---------------- | ------------------- | --------------------- | -------------------------------- |
+| Read a file      | `fs.readFile()`     | `fs.readFileSync()`   | Read file content                |
+| Write a file     | `fs.writeFile()`    | `fs.writeFileSync()`  | Create or overwrite file content |
+| Append data      | `fs.appendFile()`   | `fs.appendFileSync()` | Add data to the end of a file    |
+| Delete a file    | `fs.unlink()`       | `fs.unlinkSync()`     | Remove a file                    |
+| Rename a file    | `fs.rename()`       | `fs.renameSync()`     | Change the name of a file        |
+| Create directory | `fs.mkdir()`        | `fs.mkdirSync()`      | Create a new directory           |
+| Remove directory | `fs.rmdir()`        | `fs.rmdirSync()`      | Delete an empty directory        |
+| List files       | `fs.readdir()`      | `fs.readdirSync()`  | List contents of a directory     |
