@@ -34,11 +34,21 @@ const fs = require("fs");
     
 // })
 
-// fs.appendFile('message.txt', '\ndata2 to append', (err) => {
-//     if (err) throw err;
-//     console.log('The "data to append" was appended to file!');
-//   }); 
+fs.appendFile('message.txt', '\ndata2 to append', (err) => {
+    if (err) throw err;
+    console.log('The "data to append" was appended to file!');
+  }); 
 
 // const append = fs.appendFileSync("./message.txt", "\nsecound time", {encoding: "utf-8"})
 // console.log(append);
 
+
+// fs.watchFile('message.text', (curr, prev,) => {
+//     console.log(`the current mtime is: ${curr.mtime}`);
+//     console.log(`the previous mtime was: ${prev.mtime}`);
+//   }); 
+
+fs.watch('./data.txt',(event, filename) => {
+    console.log(event);
+    console.log(filename);
+});
