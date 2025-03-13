@@ -17,7 +17,7 @@ function getIp(website_name) {
 getIp("www.google.com");
 getIp("www.facebook.com");
 
-fs
+// fs
 
 const writeToFile = fs.writeFile(
   "../text.md",
@@ -33,7 +33,7 @@ const writeToFile = fs.writeFile(
 );
 
 // readFile
-const readAFiel = fs.readFile("../notes.md", "utf-8", (err, data) => {
+const readAFile = fs.readFile("../notes.md", "utf-8", (err, data) => {
   if (err) {
     console.log(err);
     return;
