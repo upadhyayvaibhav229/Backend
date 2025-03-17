@@ -190,5 +190,13 @@ _JavaScript determines variable types dynamically at runtime._
 
 ---
 
-Now, you can copy and paste this content back into `notes.md`. If you want to commit it again, follow these steps:
 
+## HTTP
+1.  http - hypertext transfer protocol
+2. https - secure hypertext transfer protocol
+
+- get - read data
+- post - create data
+- put - update data
+- delete - delete data
+- patch - update specific data
