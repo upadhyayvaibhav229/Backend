@@ -12,7 +12,7 @@ import { createServer } from "http";
 
 const server = createServer((req, res) => {
   if (req.url === "/") {
-    res.writeHead(200, { "content-type": "text/html" });
+    res.setHeader(200, { "content-type": "text/html" });
     res.end("Welcome to our home page");
   } else if (req.url === "/about") {
     res.end("Welcome to our about page");
@@ -26,5 +26,5 @@ const server = createServer((req, res) => {
 });
 
 server.listen(5000, () => {
-  console.log("Server is listening on port 5000....");
+  console.log("Server is running on port 5000....");
 });

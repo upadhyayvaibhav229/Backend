@@ -200,3 +200,7 @@ _JavaScript determines variable types dynamically at runtime._
 - put - update data
 - delete - delete data
 - patch - update specific data
+
+
+- response.write() - write data to the response
+- response.end() - end the response and send it to the client
