@@ -43,16 +43,20 @@ const server = http.createServer((req, res) => {
         let str = "";
         req.on("data", (chunk) => {
             str += chunk;
-        });
+        })
         req.on("close", ()=>{
             console.log("Data Received: ", str);
             res.end("Data Received");
             
         });
-        req.end("Data Received");
+        // req.end("Data Received");
 
     }
 });
+
+
+
+        
 
 server.listen(port, () => {
     console.log(`Server is running on port 5000 ${port}....`);
