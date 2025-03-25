@@ -204,3 +204,6 @@ _JavaScript determines variable types dynamically at runtime._
 
 - response.write() - write data to the response
 - response.end() - end the response and send it to the client
+
+<!-- express -->
+
