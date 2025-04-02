@@ -1,1 +1,3 @@
-/nPOST /addStudent
+
+POST /addStudent
+POST /addStudent
