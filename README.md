@@ -207,3 +207,44 @@ _JavaScript determines variable types dynamically at runtime._
 
 <!-- express -->
 
+## Params and query difference
+
+In URLs, both **query parameters** and **path parameters** (or **route parameters**) are used to send data to the server, but they are used differently.
+
+1. **Query Parameters**:
+   - They are part of the URL that comes after the `?` symbol.
+   - They are used to pass data in key-value pairs.
+   - Query parameters are commonly used for filtering, sorting, or pagination.
+   - They are visible in the URL.
+   - Multiple query parameters are separated by `&`.
+
+   **Example**:
+   ```
+   https://example.com/products?category=electronics&sort=price
+   ```
+   In this example:
+   - `category=electronics` is a query parameter.
+   - `sort=price` is another query parameter.
+
+2. **Path Parameters**:
+   - They are part of the URL path and are used to identify a specific resource.
+   - Path parameters are often used for defining RESTful routes, where the URL structure is more about accessing a resource.
+   - They are embedded within the URL, and the server interprets them as a part of the URL structure.
+   - They are not visible as query parameters.
+
+   **Example**:
+   ```
+   https://example.com/products/12345
+   ```
+   In this example, `12345` is a path parameter representing a specific product ID.
+
+### Summary:
+- **Query Parameters**: Use `?` and `&` to pass data (e.g., `?category=electronics&sort=price`).
+- **Path Parameters**: Embedded in the URL path (e.g., `/products/12345`).
+
+Both serve different purposes but are important for structuring URLs and handling dynamic data on the server.
+---
+
+## Middleware
+
+- Middleware is a function that is executed between the request and the response.
