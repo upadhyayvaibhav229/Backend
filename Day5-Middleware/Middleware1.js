@@ -25,24 +25,43 @@ app.use(express.json());
 //     res.send(`Student ID: ${id} example of params`);
 // })
 
-// // query
-// app.get("/datacatch", (req,res)=> {
-//     const {name, age} = req.query;
-//     res.send(`Name: ${name} Age: ${age}`);
+// query
+app.get("/datacatch", (req,res)=> {
+    const {name, age} = req.query;
+    res.send(`Name: ${name} Age: ${age}`);
+})
+
+// app.get("/weather", (req, res) => {
+//     const DB = {
+//         "Mumbai": "Sunny",
+//         "Delhi": "Rainy",
+//         "Kolkata": "Cloudy"
+//     }
+//     const city = req.query.city;
+//     const weather = DB[city];
+//     console.log(weather);
+    
+//     res.send(`Weather for city ${city} is ${weather}`);
 // })
 
-app.get("/weather", (req, res) => {
-    const DB = {
-        "Mumbai": "Sunny",
-        "Delhi": "Rainy",
-        "Kolkata": "Cloudy"
-    }
-    const city = req.query.city;
-    const weather = DB[city];
-    console.log(weather);
+// app.get("/weather/:city", (req, res) => {
+//     const Db = {
+//         "Mumbai": "Sunny",
+//         "Delhi": "Rainy",
+//         "Kolkata": "Cloudy"
+//     };
     
-    res.send(`Weather for city ${city} is ${weather}`);
-})
+//     const city = req.params.city;
+//     const weather = Db[city];
+
+//     if (!weather) {
+//         return res.send(`Weather information for city ${city} not available.`);
+//     }
+    
+//     console.log(weather);
+//     res.send(`Weather for city ${city} is ${weather}`);
+// });
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });

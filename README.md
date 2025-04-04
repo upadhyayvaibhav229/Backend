@@ -208,6 +208,7 @@ _JavaScript determines variable types dynamically at runtime._
 - response.end() - end the response and send it to the client
 
 <!-- express -->
+Express is a framework for building websites and web apps using JavaScript. It helps you easily manage things like handling requests (when someone visits your website) and sending responses (like showing a page or data). It makes creating and organizing the server side of a website much faster and simpler.
 
 ## Params and query difference
 
