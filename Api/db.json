@@ -1,0 +1,37 @@
+{
+    "users": [],
+    "admins": [],
+    "hotels": [
+      {
+        "category": "Luxury",
+        "image_url": "https://example.com/luxury-suite.jpg",
+        "room_type": "Suite",
+        "bed_type": "King",
+        "max_guests": 4,
+        "price_per_night": 10000,
+        "amenities": ["WiFi", "Breakfast", "Swimming Pool"],
+        "booked": false
+      },
+      {
+        "category": "Budget",
+        "image_url": "https://example.com/budget-room.jpg",
+        "room_type": "Standard",
+        "bed_type": "Single",
+        "max_guests": 1,
+        "price_per_night": 1500,
+        "amenities": ["WiFi", "Air Conditioning"],
+        "booked": false
+      },
+      {
+        "category": "Family",
+        "image_url": "https://example.com/family-room.jpg",
+        "room_type": "Deluxe",
+        "bed_type": "Double",
+        "max_guests": 3,
+        "price_per_night": 4500,
+        "amenities": ["WiFi", "Breakfast", "Gym Access"],
+        "booked": false
+      }
+    ]
+  }
+  

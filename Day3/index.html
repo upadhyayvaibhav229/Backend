@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Backend</title>
+</head>
+
+<body>
+  <h1>Backend</h1>
+  <p>Start 10/3/25</p>
+  <hr>
+  <h2>Node.js</h2>
+  <ul>
+    <li>Node.js is a JavaScript runtime environment that allows JavaScript to run outside the browser.</li>
+    <li>It is built on the V8 JavaScript engine and provides an event-driven, non-blocking I/O model.</li>
+  </ul>
+  <hr>
+  <h2>JavaScript Characteristics:</h2>
+  <ul>
+    <li>JavaScript is both synchronous and asynchronous.</li>
+    <li>JavaScript is single-threaded.</li>
+    <li>JavaScript is a dynamically typed, concurrent programming language.</li>
+  </ul>
+  <hr>
+  <h2>What is synchronous programming?</h2>
+  <p>Synchronous programming executes tasks sequentially&#8212;one task must finish before moving to the next.</p>
+  <pre><code>console.log(1);
+
+setTimeout(() => {
+  console.log(2);
+}, 0);
+
+console.log(3);</code></pre>
+  <p>Output: <br>
+    1 <br>
+    3 <br>
+    2 <br>
+  </p>
+  <p>Even though <code>setTimeout</code> has <code>0</code> delay, it is asynchronous and executes later.</p>
+  <hr>
+  <h2>What is asynchronous programming?</h2>
+  <p>Asynchronous programming allows tasks to run independently without blocking the execution of other tasks.</p>
+  <pre><code>console.log(1);
+
+setTimeout(() => {
+  console.log(2);
+}, 0);
+
+console.log(3);</code></pre>
+  <p>Output: <br>
+    1 <br>
+    3 <br>
+    2 <br>
+  </p>
+  <p>The execution of <code>setTimeout</code> is deferred, making the code non-blocking.</p>
+  <hr>
+  <h2>What is concurrent programming?</h2>
+  <p><strong>Concurrent programming</strong> allows multiple tasks to make progress <strong>at the same time</strong>
+    but not necessarily simultaneously. JavaScript uses <strong>event-driven concurrency</strong>.</p>
+  <pre><code>console.log(1);
+
+setTimeout(() => {
+  console.log(2);
+}, 0);
+
+console.log(3);</code></pre>
+  <p>JavaScript&#8217;s event loop enables concurrency by handling I/O operations asynchronously while executing other
+    tasks.</p>
+  <hr>
+  <h2>What is parallel programming?</h2>
+  <p><strong>Parallel programming</strong> executes multiple tasks <strong>simultaneously</strong> using multiple CPU
+    cores.</p>
+  <ul>
+    <li>JavaScript (Node.js) is NOT truly parallel but uses an event loop to handle multiple tasks efficiently.</li>
+    <li>Parallelism occurs in worker threads or child processes, not in the main thread.</li>
+  </ul>
+  <hr>
+  <h2>What is the Event Loop?</h2>
+  <p>The <strong>event loop</strong> is the mechanism that allows JavaScript to handle asynchronous operations
+    non-blockingly.</p>
+  <ol>
+    <li>Executes <strong>synchronous</strong> code first (call stack).</li>
+    <li>Handles <strong>asynchronous tasks</strong> (callbacks, promises, timers).</li>
+    <li>Moves completed async tasks from the <strong>callback queue</strong> to the <strong>call stack</strong> when
+      it&#8217;s empty.</li>
+  </ol>
+  <pre><code>console.log("A");
+
+setTimeout(() => {
+  console.log("B");
+}, 0);
+
+console.log("C");</code></pre>
+  <p>Output: <br>
+    A <br>
+    C <br>
+    B <br>
+  </p>
+  <p>Even though <code>setTimeout</code> has <code>0</code> delay, it runs after synchronous code due to the event loop.
+  </p>
+  <hr>
+  <h2>What is a callback function?</h2>
+  <p>A <strong>callback function</strong> is a function passed as an argument to another function and executed later.
+  </p>
+  <pre><code>function greet(name, callback) {
+  console.log("Hello, " + name);
+  callback();
+}
+
+function sayGoodbye() {
+  console.log("Goodbye!");
+}
+
+greet("Vaibhav", sayGoodbye);</code></pre>
+  <p>Output: <br>
+    Hello, Vaibhav <br>
+    Goodbye! <br>
+  </p>
+  
+</body>
+
+</html>
