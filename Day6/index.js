@@ -15,37 +15,37 @@ const StudentModel = mongoose.model("student", StudentSchema);
 const connectDB = async () => {
   try {
     await mongoose.connect(url);
-    console.log("✅ Connected to MongoDB");
+    console.log(" Connected to MongoDB");
 
-    // 🔹 INSERT
+    //  INSERT
     // const insertdata = await StudentModel.create({
     //   name: "John Doe",
     //   age: 25,
     //   email: "john@gmail.com",
     // });
-    // console.log("✅ Data inserted:", insertdata);
+    // console.log(" Data inserted:", insertdata);
 
-    // 🔹 DELETE ALL
+    //  DELETE ALL
     // const delAll = await StudentModel.deleteMany({});
-    // console.log("🗑️ All data deleted:", delAll);
+    // console.log(" All data deleted:", delAll);
 
-    // 🔹 DELETE SPECIFIC
+    //  DELETE SPECIFIC
     // const delData = await StudentModel.deleteMany({ name: "John Doe", age: 25 });
-    // console.log("🗑️ Specific data deleted:", delData);
+    // console.log(" Specific data deleted:", delData);
 
-    // 🔹 UPDATE
+    // UPDATE
     // const updateData = await StudentModel.updateMany(
     //   { name: "John Doe" },
     //   {$set: { name: "Vaibhav Upadhyay" } },
     //   { $set: { age: 20 } }
     // );
-    // console.log("✏️ Data updated:", updateData);
+    // console.log(" Data updated:", updateData);
 
     // read all data
     // const data = await StudentModel.find({});
-    // console.log("📜 All data:", data);
+    // console.log(" All data:", data);
   } catch (error) {
-    console.log("❌ Error connecting to MongoDB:", error);
+    console.log(" Error connecting to MongoDB:", error);
   }
 };
 
