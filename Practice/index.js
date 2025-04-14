@@ -1,44 +1,26 @@
 import express from "express";
+import registerUser from "./Route/user.route.js";
 
 const app = express();
+
+// Middleware to parse JSON request bodies
 app.use(express.json());
-const PORT = 8000;
 
-app.get("/",(req,res)=>{
-    res.send("Welcome to our home page")
-})
+const demo = () => {
+  try {
+    console.log("Demo function called");
+    return "Demo function executed";
+  } catch (error) {
+    
+  }
 
-app.get("/about",(req,res)=>{
-    res.send("Welcome to our about page")
-})
+  
+}
 
-app.get("/contact",(req,res)=>{
-    // res.send("Welcome to our contact page")
-    // send json
-    res.json({
-        message : "Welcome to our contact page",
-        name : "Shahid",
-        age : 22
-    })
-})
+// Use the route
+app.use(registerUser);
 
-// query params & url params
-// app.get("/datacatch",(req,res)=>{
-//     const {name, age} = req.query;
-//     res.send(`Name: ${name}, Age: ${age}`);
-// })
-
-// app.get("/wheather/:city",(req,res)=>{
-//     const {city} = req.params;
-//     const DB = {
-//         "Mumbai": "Sunny",
-//         "Delhi": "Rainy",
-//         "Kolkata": "Cloudy"
-//     }
-//     const weather = DB[city];
-//     res.send(`Weather for city ${city} is ${weather}`);
-// })
-
-app.listen(PORT,()=>{
-    console.log(`Server is running on port ${PORT}`);
-})
+// Your other routes and server setup
+app.listen(8998, () => {
+  console.log("Server is running on port 3000");
+});
