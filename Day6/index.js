@@ -42,11 +42,11 @@ const connectDB = async () => {
     // console.log(" Data updated:", updateData);
 
     // read all data
-    // const data = await StudentModel.find({});
-    // console.log(" All data:", data);
+    const data = await StudentModel.find({});
+    console.log(" All data:", data);
   } catch (error) {
     console.log(" Error connecting to MongoDB:", error);
   }
-};
+};                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 
 connectDB();
