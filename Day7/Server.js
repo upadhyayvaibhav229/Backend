@@ -7,17 +7,28 @@ const app = express();
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("Welcome to the User Management API");
+app.get("/", async (req, res) => {
+  try {
+    const result = await UserModel.updateMany(
+      { org: { $exists: true } },
+      { $set: { org: "Microsoft" } }
+    );
+
+    res.send(`Modification done successfully ${result.modifiedCount}`);
+  } catch (error) {
+    console.log("Error in root route: ", error);
+    res.status(500).send("Error in root route");
+  }
 });
 
+// show all data
 app.get("/userdata", async (req, res) => {
   try {
     if (!req.body) {
       return res.status(400).send("No data provided");
     } else {
-      await UserModel.find({});
-      res.send("User data fetched successfully");
+     const data =  await UserModel.find({});
+      res.send(`${data}`);
     }
   } catch (error) {
     console.log("Error in reading data: ", error);
@@ -25,6 +36,7 @@ app.get("/userdata", async (req, res) => {
   }
 });
 
+// create user
 app.post("/createuser", async (req, res) => {
   try {
     const addUser = new UserModel(req.body);
@@ -36,7 +48,7 @@ app.post("/createuser", async (req, res) => {
   }
 });
 
-// update
+// update user
 app.put("/updateuser/:id", async (req, res) => {
   try {
     const userId = req.params.id;
@@ -49,7 +61,7 @@ app.put("/updateuser/:id", async (req, res) => {
   }
 });
 
-// delete
+// delete users
 app.delete("/deleteuser/:id", async (req, res) => {
   try {
     await UserModel.deleteOne({ _id: req.params.id });
@@ -61,7 +73,7 @@ app.delete("/deleteuser/:id", async (req, res) => {
 });
 
 // find by id
-app.get('/user/:id', async (req, res) => {
+app.get("/user/:id", async (req, res) => {
   try {
     const userId = req.params.id;
     const user = await UserModel.findById(userId);
@@ -72,9 +84,8 @@ app.get('/user/:id', async (req, res) => {
   } catch (error) {
     console.log("Error in finding user: ", error);
     res.status(500).send("Error finding user");
-    
   }
-})
+});
 
 app.listen(port, async (req, res) => {
   console.log(`Server is running on port ${port}`);
