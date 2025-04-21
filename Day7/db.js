@@ -1,6 +1,12 @@
 import mongoose from "mongoose";
 
-const Connection = mongoose.connect("mongodb://127.0.0.1:27017/userDB");
+import dotenv from "dotenv";
+
+dotenv.config(); // load env variables
+
+
+const Connection = mongoose.connect(process.env.MONGODB_URL);
+// const Connection = mongoose.connect("mongodb://127.0.0.1:27017/userDB");
 
 const userSchema = new mongoose.Schema({
     name:String,

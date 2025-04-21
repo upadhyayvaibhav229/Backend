@@ -8,11 +8,17 @@ const app = express();
 app.use(express.json());
 
 app.get("/", async (req, res) => {
+  const data = req.body;
   try {
+    // const result = await UserModel.updateMany(
+    //   { org: { $exists: true } },
+    //   { $set: { org: "Microsoft" } }
+    // );
+
     const result = await UserModel.updateMany(
-      { org: { $exists: true } },
-      { $set: { org: "Microsoft" } }
-    );
+      {},
+      {$set: data}
+    )
 
     res.send(`Modification done successfully ${result.modifiedCount}`);
   } catch (error) {

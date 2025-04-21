@@ -1,7 +1,5 @@
 # Backend
 Backend start 10/3/25
-<<<<<<< HEAD
-=======
 
 
 Here are your recovered notes for `notes.md`:  
@@ -251,4 +249,3 @@ Both serve different purposes but are important for structuring URLs and handlin
 ## Middleware
 
 - Middleware is a function that is executed between the request and the response.
->>>>>>> 858f1a6 (commited)
