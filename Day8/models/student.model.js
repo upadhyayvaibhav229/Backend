@@ -20,7 +20,7 @@ const StudentSchema = new Schema({
         unique: true,
     },
     phoneNo: {
-        type: Number,
+        type: String,
         required: true,
         unique: true,
         
