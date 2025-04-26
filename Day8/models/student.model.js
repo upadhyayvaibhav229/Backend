@@ -25,6 +25,12 @@ const StudentSchema = new Schema({
         unique: true,
         
     },
+    Subjects : [
+        {
+            subjectName: String,
+            marks: Number,
+        }
+    ]
 })
 
 export const Student = mongoose.model("Student", StudentSchema);
